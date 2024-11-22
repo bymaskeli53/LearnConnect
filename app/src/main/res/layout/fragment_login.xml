@@ -66,7 +66,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="32dp"
             android:text="@string/login_to_see_contents"
-            android:textSize="32sp"
+            android:textSize="28sp"
             android:textStyle="bold"
             app:fontFamily="@font/angkor" />
 
@@ -83,6 +83,7 @@
             app:boxStrokeColor="@color/colorBorder">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress" />
@@ -101,7 +102,7 @@
             app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
-
+                android:id="@+id/et_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword" />
@@ -109,13 +110,14 @@
 
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textAllCaps="false"
             android:layout_marginTop="32dp"
-            android:background="@drawable/button_shape"
+            android:background="@drawable/button_ripple"
             android:text="@string/login"
+            android:textAllCaps="false"
             android:textColor="@color/text_button" />
 
         <LinearLayout
