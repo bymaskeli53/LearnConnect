@@ -62,6 +62,7 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>() {
                 when (result) {
                     is AuthResult.Success -> {
                         findNavController().navigate(R.id.action_signUpFragment_to_mainActivity)
+                        activity?.finish()
                     }
 
                     is AuthResult.Error -> {

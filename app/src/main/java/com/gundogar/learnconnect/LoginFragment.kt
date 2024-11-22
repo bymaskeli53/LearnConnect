@@ -67,6 +67,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
                 when (result) {
                     is AuthResult.Success -> {
                         findNavController().navigate(R.id.action_loginFragment_to_mainActivity)
+                        activity?.finish()
                     }
 
                     is AuthResult.Error -> {

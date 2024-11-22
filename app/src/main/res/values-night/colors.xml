@@ -4,4 +4,5 @@
     <color name="background_button">#9C27B0</color>
     <color name="text_button">#D4E5F0</color>
     <color name="text_signup">#00BCD4</color>
+    <color name="rippleColor">#1F000000</color>
 </resources>
