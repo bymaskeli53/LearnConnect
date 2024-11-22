@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1068595809117",
+    "project_id": "learnconnect-85ab4",
+    "storage_bucket": "learnconnect-85ab4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1068595809117:android:e5aa38fb2beccbaddc36b4",
+        "android_client_info": {
+          "package_name": "com.gundogar.learnconnect"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADE0HG4LK_vhoH6kZgXJwseWJO0QZDkhs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
