@@ -9,6 +9,10 @@ android {
     namespace = "com.gundogar.learnconnect"
     compileSdk = 35
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "com.gundogar.learnconnect"
         minSdk = 24

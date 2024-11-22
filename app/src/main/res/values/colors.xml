@@ -5,4 +5,5 @@
     <color name="colorBorder">#2E2727</color>
     <color name="background_button">#230C1D</color>
     <color name="text_button">#D4E5F0</color>
+    <color name="text_signup">#3749F8</color>
 </resources>

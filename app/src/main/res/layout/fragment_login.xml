@@ -67,7 +67,8 @@
             android:layout_marginTop="32dp"
             android:text="@string/login_to_see_contents"
             android:textSize="32sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:fontFamily="@font/angkor" />
 
 
         <com.google.android.material.textfield.TextInputLayout
@@ -130,16 +131,18 @@
                 android:layout_gravity="center"
 
 
-                android:text="@string/if_you_do_not_have_an_account" />
+                android:text="@string/if_you_do_not_have_an_account"
+                app:fontFamily="@font/bagel_fat_one" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_navigate_to_sign_up"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:textColor="@color/text_signup"
                 android:layout_marginStart="4dp"
-                android:text="@string/click_here" />
+                android:text="@string/click_here"
+                android:textColor="@color/text_signup"
+                app:fontFamily="@font/bagel_fat_one" />
 
         </LinearLayout>
 
