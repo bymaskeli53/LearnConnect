@@ -80,7 +80,9 @@ dependencies {
     testImplementation(libs.kotlinx.coroutines.test)
 
     // Exo player
-    implementation(libs.exoplayer)
+    implementation(libs.androidx.media3.exoplayer)
+    implementation(libs.androidx.media3.exoplayer.dash)
+    implementation(libs.androidx.media3.ui)
 
     // Datastore
     implementation(libs.androidx.datastore.preferences)
