@@ -26,4 +26,7 @@ class FirebaseAuthRepository @Inject constructor(private val auth: FirebaseAuth)
     }
 
     override fun signOut() = auth.signOut()
+    override fun getCurrentUserEmail() : String {
+        return auth.currentUser?.email ?: "No email found"
+    }
 }

@@ -17,6 +17,9 @@ class AuthViewModel @Inject constructor(private val authRepository: AuthReposito
     private val _validationError = MutableStateFlow<String?>(null)
     val validationError: StateFlow<String?> get() = _validationError
 
+    private val _currentUserEmail = MutableStateFlow<String?>(null)
+    val currentUserEmail: StateFlow<String?> get() = _currentUserEmail
+
     fun signUp(email: String, password: String) {
         if (validateInput(email, password)) {
             viewModelScope.launch {
@@ -39,11 +42,17 @@ class AuthViewModel @Inject constructor(private val authRepository: AuthReposito
                 _validationError.value = "Geçerli bir email girin."
                 false
             }
+
             password.length < 6 -> {
                 _validationError.value = "Şifre en az 6 karakter olmalı."
                 false
             }
+
             else -> true
         }
+    }
+
+    fun getCurrentUserEmail() {
+        _currentUserEmail.value = authRepository.getCurrentUserEmail()
     }
 }

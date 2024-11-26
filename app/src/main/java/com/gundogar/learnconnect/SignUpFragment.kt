@@ -1,5 +1,6 @@
 package com.gundogar.learnconnect
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -61,8 +62,7 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>() {
             viewModel.authResult.collect { result ->
                 when (result) {
                     is AuthResult.Success -> {
-                        findNavController().navigate(R.id.action_signUpFragment_to_mainActivity)
-                        activity?.finish()
+                        navigateToMainActivity()
                     }
 
                     is AuthResult.Error -> {
@@ -85,7 +85,15 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>() {
                 }
             }
         }
+
+
     }
 
+    private fun navigateToMainActivity() {
+        val intent = Intent(requireContext(), MainActivity::class.java)
+        requireActivity().finish()
+        startActivity(intent)
+
+    }
 
 }

@@ -37,4 +37,14 @@ class AuthRepositoryTest {
         assertTrue(result is AuthResult.Error)
         assertEquals("User already exists", (result as AuthResult.Error).exception.message)
     }
+
+    @Test
+    fun `when user logged in, mail should return correct address`() = runTest {
+        // Given
+        fakeAuthRepository.signUp("test@test.com", "password123")
+        // When
+        val result = fakeAuthRepository.getCurrentUserEmail()
+        // Then
+        assertEquals("test@test.com", fakeAuthRepository.getCurrentUserEmail())
+    }
 }
