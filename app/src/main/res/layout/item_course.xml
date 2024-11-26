@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp">
@@ -10,13 +11,48 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <ImageView
-            android:src="@drawable/ic_geography"
-            android:id="@+id/courseImage"
-            android:layout_width="120dp"
-            android:layout_height="150dp"
-            android:contentDescription="Image Of The Course"
-            android:scaleType="centerCrop" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:src="@drawable/ic_geography"
+                android:id="@+id/courseImage"
+                android:layout_width="120dp"
+                android:layout_height="150dp"
+                android:contentDescription="Image Of The Course"
+                android:scaleType="centerCrop" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ic_favorite"
+                    android:layout_marginStart="80dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/ic_star_empty"
+                    />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_buy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/buy"
+                    android:layout_marginStart="70dp"
+                    android:layout_marginTop="16dp"
+
+                    />
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
 
         <TextView
             android:text="Android Course"
@@ -34,5 +70,6 @@
             android:layout_height="wrap_content"
             android:textSize="14sp"
             android:paddingTop="4dp" />
+
     </LinearLayout>
 </androidx.cardview.widget.CardView>
