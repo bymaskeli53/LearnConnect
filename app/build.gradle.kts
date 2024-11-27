@@ -94,4 +94,7 @@ dependencies {
     // Turbine
     testImplementation(libs.turbine)
 
+    // Firestore
+    implementation(libs.firebase.firestore)
+
 }
