@@ -2,6 +2,7 @@ package com.gundogar.learnconnect
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
+import androidx.media3.ui.PlayerView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -13,7 +14,8 @@ import javax.inject.Inject
 @HiltViewModel
 class MyCoursesViewModel @Inject constructor(
     private val firestore: FirebaseFirestore,
-    private val auth: FirebaseAuth
+    private val auth: FirebaseAuth,
+    private val exoplayerRepository: ExoplayerRepository
 ) : ViewModel() {
 
     init {
@@ -41,5 +43,11 @@ class MyCoursesViewModel @Inject constructor(
                     _myCourses.value = myCourseList
                 }
             }
+    }
+
+    fun watchVideo(playerView: PlayerView) {
+        exoplayerRepository.watchVideo(playerView = playerView )
+
+
     }
 }

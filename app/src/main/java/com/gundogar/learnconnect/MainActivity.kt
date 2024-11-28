@@ -1,18 +1,8 @@
 package com.gundogar.learnconnect
 
-import android.net.Uri
-import android.os.Bundle
-import android.util.Log
 
-import androidx.activity.enableEdgeToEdge
+import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.media3.common.MediaItem
-import androidx.media3.common.MimeTypes
-import androidx.media3.common.PlaybackException
-import androidx.media3.common.Player
-import androidx.media3.exoplayer.ExoPlayer
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
@@ -23,7 +13,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-    // private lateinit var player: ExoPlayer
+
     private lateinit var binding: ActivityMainBinding
 
     private lateinit var navController: NavController
@@ -31,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-       // enableEdgeToEdge()
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -42,11 +32,15 @@ class MainActivity : AppCompatActivity() {
         val bottomNav: BottomNavigationView = binding.bottomNavigation
         bottomNav.setupWithNavController(navController)
 
-//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-//            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-//            insets
-//        }
+        navController.addOnDestinationChangedListener{ _, destination, _ ->
+            if (destination.id == R.id.exoplayerFragment) {
+             binding.bottomNavigation.hide()
+            } else {
+                binding.bottomNavigation.show()
+            }
+        }
+
+
 
 
     }
@@ -56,7 +50,6 @@ class MainActivity : AppCompatActivity() {
 //        binding.playerView.player = player
 //
 //        // Daha küçük bir test videosu kullanalım
-//        val videoUri = Uri.parse("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4")
 //
 //        // Media item oluştururken daha fazla kontrol ekleyelim
 //        val mediaItem = MediaItem.Builder()

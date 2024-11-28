@@ -31,7 +31,7 @@ class MyCoursesAdapter(
         holder.binding.courseName.text = course.courseId
         holder.binding.courseDescription.text = course.description
 
-        holder.binding.btnBuy.setOnClickListener {
+        holder.binding.root.setOnClickListener {
             itemClickListener(course)
         }
 

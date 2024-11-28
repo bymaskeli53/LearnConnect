@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.gundogar.learnconnect.databinding.FragmentMyCoursesBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -45,6 +46,7 @@ class MyCoursesFragment : BaseFragment<FragmentMyCoursesBinding>() {
     }
 
     private fun watchVideo() {
+        findNavController().navigate(R.id.action_myCoursesFragment_to_exoplayerFragment)
 
     }
 

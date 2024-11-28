@@ -19,10 +19,19 @@
         android:id="@+id/myCoursesFragment"
         android:name="com.gundogar.learnconnect.MyCoursesFragment"
         android:label="fragment_my_courses"
-        tools:layout="@layout/fragment_my_courses" />
+        tools:layout="@layout/fragment_my_courses" >
+        <action
+            android:id="@+id/action_myCoursesFragment_to_exoplayerFragment"
+            app:destination="@id/exoplayerFragment" />
+    </fragment>
     <fragment
         android:id="@+id/favoritesFragment"
         android:name="com.gundogar.learnconnect.FavoritesFragment"
         android:label="fragment_favorites"
         tools:layout="@layout/fragment_favorites" />
+    <fragment
+        android:id="@+id/exoplayerFragment"
+        android:name="com.gundogar.learnconnect.ExoplayerFragment"
+        android:label="fragment_exoplayer"
+        tools:layout="@layout/fragment_exoplayer" />
 </navigation>
