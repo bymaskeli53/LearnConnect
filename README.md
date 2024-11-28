@@ -48,5 +48,6 @@ Technologies used in the project:
 *   Dagger-Hilt
 *   Coroutines
 *   Room
+*   Exoplayer
 *   Turbine
 *   JUnit
