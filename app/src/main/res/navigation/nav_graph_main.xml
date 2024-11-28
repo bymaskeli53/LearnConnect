@@ -7,17 +7,17 @@
 
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.gundogar.learnconnect.ProfileFragment"
+        android:name="com.gundogar.learnconnect.ui.fragment.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/coursesFragment"
-        android:name="com.gundogar.learnconnect.CoursesFragment"
+        android:name="com.gundogar.learnconnect.ui.fragment.CoursesFragment"
         android:label="fragment_courses"
         tools:layout="@layout/fragment_courses" />
     <fragment
         android:id="@+id/myCoursesFragment"
-        android:name="com.gundogar.learnconnect.MyCoursesFragment"
+        android:name="com.gundogar.learnconnect.ui.fragment.MyCoursesFragment"
         android:label="fragment_my_courses"
         tools:layout="@layout/fragment_my_courses" >
         <action
@@ -26,16 +26,16 @@
     </fragment>
     <fragment
         android:id="@+id/favoritesFragment"
-        android:name="com.gundogar.learnconnect.FavoritesFragment"
+        android:name="com.gundogar.learnconnect.ui.fragment.FavoritesFragment"
         android:label="fragment_favorites"
         tools:layout="@layout/fragment_favorites" />
     <fragment
         android:id="@+id/exoplayerFragment"
-        android:name="com.gundogar.learnconnect.ExoplayerFragment"
+        android:name="com.gundogar.learnconnect.ui.fragment.ExoplayerFragment"
         android:label="fragment_exoplayer"
         tools:layout="@layout/fragment_exoplayer" >
         <argument
             android:name="course"
-            app:argType="com.gundogar.learnconnect.RemoteCourseModel" />
+            app:argType="com.gundogar.learnconnect.model.RemoteCourseModel" />
     </fragment>
 </navigation>

@@ -1,6 +1,9 @@
 package com.gundogar.learnconnect
 
 import app.cash.turbine.test
+import com.gundogar.learnconnect.repository.FakeAuthRepository
+import com.gundogar.learnconnect.ui.viewmodel.AuthViewModel
+import com.gundogar.learnconnect.util.AuthResult
 import junit.framework.TestCase.assertEquals
 import junit.framework.TestCase.assertNull
 import junit.framework.TestCase.assertTrue

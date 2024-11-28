@@ -1,5 +1,7 @@
 package com.gundogar.learnconnect
 
+import com.gundogar.learnconnect.repository.FakeAuthRepository
+import com.gundogar.learnconnect.util.AuthResult
 import junit.framework.TestCase.assertEquals
 import junit.framework.TestCase.assertTrue
 import kotlinx.coroutines.test.runTest
