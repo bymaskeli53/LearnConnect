@@ -31,10 +31,10 @@ class MyCoursesFragment : BaseFragment<FragmentMyCoursesBinding>() {
         binding.rvMyCourses.layoutManager = LinearLayoutManager(requireContext())
 
 
-        launchAndRepeatOnLifecycle{
+        launchAndRepeatOnLifecycle {
             viewModel.myCourses.collect { courses ->
                 adapter = MyCoursesAdapter(courses, itemClickListener = {
-                    watchVideo()
+                    watchVideo(it)
 
                 })
                 binding.rvMyCourses.adapter = adapter
@@ -45,11 +45,11 @@ class MyCoursesFragment : BaseFragment<FragmentMyCoursesBinding>() {
 
     }
 
-    private fun watchVideo() {
-        findNavController().navigate(R.id.action_myCoursesFragment_to_exoplayerFragment)
+    private fun watchVideo(course: RemoteCourseModel) {
+        val action = MyCoursesFragmentDirections.actionMyCoursesFragmentToExoplayerFragment(course)
+        findNavController().navigate(action)
 
     }
-
 
 
 }

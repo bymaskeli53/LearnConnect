@@ -25,8 +25,8 @@ object ExoplayerModule {
 
     @Provides
     @Singleton
-    fun provideExoplayerRepository(exoPlayer: ExoPlayer): ExoplayerRepository {
-        return ExoplayerRepository(exoPlayer)
+    fun provideExoplayerRepository(exoPlayer: ExoPlayer,videoProgressDao: VideoProgressDao): ExoplayerRepository {
+        return ExoplayerRepository(exoPlayer,videoProgressDao)
     }
 
 

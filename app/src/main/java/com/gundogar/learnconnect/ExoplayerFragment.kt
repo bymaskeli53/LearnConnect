@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.gundogar.learnconnect.databinding.FragmentExoplayerBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -14,6 +15,8 @@ import dagger.hilt.android.AndroidEntryPoint
 class ExoplayerFragment : BaseFragment<FragmentExoplayerBinding>() {
 
     private val viewModel: MyCoursesViewModel by viewModels()
+
+    private val navArgs: ExoplayerFragmentArgs by navArgs()
 
     override fun inflateBinding(
         inflater: LayoutInflater,
@@ -24,8 +27,16 @@ class ExoplayerFragment : BaseFragment<FragmentExoplayerBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.watchVideo(binding.exoPlayerView)
+        viewModel.watchVideo(binding.exoPlayerView,navArgs.course.courseId)
 
+
+
+    }
+
+    override fun onPause() {
+        super.onPause()
+        val videoId = navArgs.course.courseId
+        viewModel.saveVideoProgress(videoId)
     }
 
 

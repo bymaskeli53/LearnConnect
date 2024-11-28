@@ -14,16 +14,20 @@ import javax.inject.Inject
 const val VIDEO_URL =
     "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
 
-class ExoplayerRepository @Inject constructor(private val exoPlayer: ExoPlayer) {
+class ExoplayerRepository @Inject constructor(private val exoPlayer: ExoPlayer, private val videoProgressDao: VideoProgressDao) {
 
-    fun watchVideo(playerView: PlayerView) {
+    suspend fun watchVideo(playerView: PlayerView,videoId: String) {
         playerView.player = exoPlayer
         val videoUri = Uri.parse(VIDEO_URL)
         val mediaItem = MediaItem.Builder().setUri(videoUri).setMimeType(MimeTypes.APPLICATION_MP4)
             .build()
 
+        val lastPosition = videoProgressDao.getProgress(videoId) ?: 0L // Pozisyon al
+
+
         exoPlayer.apply {
             setMediaItem(mediaItem)
+            seekTo(lastPosition)
 
             addListener(object : Player.Listener {
                 override fun onPlayerError(error: PlaybackException) {
@@ -47,5 +51,10 @@ class ExoplayerRepository @Inject constructor(private val exoPlayer: ExoPlayer) 
             playWhenReady = true
 
         }
+    }
+
+    suspend fun saveVideoProgress(videoId: String) {
+        val currentPosition = exoPlayer.currentPosition
+        videoProgressDao.insertProgress(VideoProgress(videoId, currentPosition))
     }
 }

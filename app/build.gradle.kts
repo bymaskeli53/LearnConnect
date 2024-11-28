@@ -4,6 +4,9 @@ plugins {
     alias(libs.plugins.hilt.plugin)
     alias(libs.plugins.ksp)
     alias(libs.plugins.google.services)
+    id("kotlin-parcelize")
+    alias(libs.plugins.androidx.navigation.safe.args)
+
 }
 
 android {
@@ -96,5 +99,8 @@ dependencies {
 
     // Firestore
     implementation(libs.firebase.firestore)
+
+    // Safe args
+
 
 }

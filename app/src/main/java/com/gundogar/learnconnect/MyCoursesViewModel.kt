@@ -2,6 +2,7 @@ package com.gundogar.learnconnect
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import androidx.media3.ui.PlayerView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -9,6 +10,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
@@ -45,9 +47,18 @@ class MyCoursesViewModel @Inject constructor(
             }
     }
 
-    fun watchVideo(playerView: PlayerView) {
-        exoplayerRepository.watchVideo(playerView = playerView )
+    fun watchVideo(playerView: PlayerView,videoId: String) {
+        viewModelScope.launch {
+            exoplayerRepository.watchVideo(playerView = playerView,videoId = videoId)
+
+        }
 
 
+    }
+
+    fun saveVideoProgress(videoId: String) {
+        viewModelScope.launch {
+            exoplayerRepository.saveVideoProgress(videoId)
+        }
     }
 }

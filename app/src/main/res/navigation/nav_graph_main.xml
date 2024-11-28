@@ -33,5 +33,9 @@
         android:id="@+id/exoplayerFragment"
         android:name="com.gundogar.learnconnect.ExoplayerFragment"
         android:label="fragment_exoplayer"
-        tools:layout="@layout/fragment_exoplayer" />
+        tools:layout="@layout/fragment_exoplayer" >
+        <argument
+            android:name="course"
+            app:argType="com.gundogar.learnconnect.RemoteCourseModel" />
+    </fragment>
 </navigation>
