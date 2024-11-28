@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.gundogar.learnconnect.model.RemoteCourseModel
 import com.gundogar.learnconnect.databinding.ItemCourseBinding
+import com.gundogar.learnconnect.databinding.ItemMyCourseBinding
 
 class MyCoursesAdapter(
     private val courses: List<RemoteCourseModel>,
@@ -13,14 +14,14 @@ class MyCoursesAdapter(
 
 
 
-    inner class MyCoursesViewHolder(val binding: ItemCourseBinding) :
+    inner class MyCoursesViewHolder(val binding: ItemMyCourseBinding) :
         RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
     ): MyCoursesViewHolder {
-        val binding = ItemCourseBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = ItemMyCourseBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return MyCoursesViewHolder(binding)
     }
 
