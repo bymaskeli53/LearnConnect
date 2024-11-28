@@ -1,6 +1,6 @@
 <h1 align="center" id="title">Learn And Connect</h1>
 
-<p id="description">This Project is a online education platform</p>
+<p id="description">This Project is an online education platform</p>
 
 
 
