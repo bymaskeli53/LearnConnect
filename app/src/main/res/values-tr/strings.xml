@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LearnConnect</string>
+    <string name="login_to_see_contents">İçerikleri görmek için giriş yapın</string>
+    <string name="password">Şifre</string>
+    <string name="login">Giriş Yap</string>
+    <string name="hello_blank_fragment">Merhaba boş fragment</string>
+    <string name="click_here"><u>buraya tıklayın</u></string>
+    <string name="if_you_do_not_have_an_account">Eğer bir hesabınız yoksa</string>
+    <string name="register_to_see_contents">İçerikleri görmek için kayıt olun</string>
+    <string name="register">Kayıt Ol</string>
+    <string name="if_you_already_have_an_account">Eğer bir hesabınız varsa</string>
+    <string name="buy">Satın Al</string>
+    <string name="you_bought_the_course">Kursu satın aldınız</string>
+</resources>
